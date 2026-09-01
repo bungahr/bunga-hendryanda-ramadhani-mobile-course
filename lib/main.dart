@@ -63,7 +63,7 @@ class ProfileScreen extends StatelessWidget {
 
               // ── GANTI: Nama Anda ──────────────────────────────────
               const Text(
-                'Nama Lengkap Anda',
+                'Bunga Hendryanda Ramadhani',
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
@@ -83,7 +83,7 @@ class ProfileScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: const Text(
-                  'NIM: 3624XXXXXXXX',
+                  'NIM: 362558302031',
                   style: TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
@@ -126,7 +126,7 @@ class ProfileScreen extends StatelessWidget {
                       _InfoRow(
                         icon: Icons.calendar_today_rounded,
                         label: 'Semester / TA',
-                        value: 'Semester 5 (2026/2027)',
+                        value: 'Semester 3 (2025/2026)',
                       ),
                     ],
                   ),
