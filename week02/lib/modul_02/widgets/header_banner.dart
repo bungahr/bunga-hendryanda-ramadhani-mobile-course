@@ -7,7 +7,7 @@ class HeaderBanner extends StatelessWidget {
 
   const HeaderBanner({
     super.key,
-    this.studentName = 'Bunga Hendryanda Ramadhani',
+    this.studentName = 'Bunga Hendryanda Ramamadhani',
     this.nim = '362558302031',
   });
 
@@ -25,7 +25,7 @@ class HeaderBanner extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF0284C7)..withValues(alpha: 0.3),
+            color: const Color(0xFF0284C7).withOpacity(0.3),
             blurRadius: 12,
             offset: const Offset(0, 6),
           ),
@@ -43,11 +43,11 @@ class HeaderBanner extends StatelessWidget {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.2),
+                  color: Colors.white.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: const Text(
-                  'Semester 5 (2026/2027)',
+                  'Semester 3 (2026/2027)',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 11,
@@ -62,16 +62,12 @@ class HeaderBanner extends StatelessWidget {
               ),
             ],
           ),
-
           const SizedBox(height: 14),
-
           Text(
             'Selamat Datang, $studentName ($nim)',
             style: const TextStyle(color: Colors.white70, fontSize: 13),
           ),
-
           const SizedBox(height: 4),
-
           const Text(
             'Dashboard Akademik & Proyek',
             style: TextStyle(
@@ -80,9 +76,8 @@ class HeaderBanner extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-
           const SizedBox(height: 16),
-
+          // Ringkasan status akademik
           const Row(
             children: [
               _StatPill(icon: Icons.task_alt, label: '4 Matakuliah'),
@@ -98,7 +93,7 @@ class HeaderBanner extends StatelessWidget {
   }
 }
 
-// Widget kecil untuk menampilkan pill status
+// Widget kecil untuk menampilkan pill status (ikon + label)
 class _StatPill extends StatelessWidget {
   final IconData icon;
   final String label;
@@ -110,7 +105,7 @@ class _StatPill extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(
-        color: Colors.black.withValues(alpha: 0.2),
+        color: Colors.black.withOpacity(0.2),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(

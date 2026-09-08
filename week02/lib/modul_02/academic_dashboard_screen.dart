@@ -14,7 +14,6 @@ class AcademicDashboardScreen extends StatefulWidget {
 
 class _AcademicDashboardScreenState extends State<AcademicDashboardScreen> {
   final List<Course> _courses = Course.getSampleCourses();
-
   bool _isDarkMode = false;
 
   void _toggleDarkMode() {
@@ -53,11 +52,10 @@ class _AcademicDashboardScreenState extends State<AcademicDashboardScreen> {
             ),
           ],
         ),
-
-        // LayoutBuilder menentukan layout berdasarkan ukuran layar
+        // LayoutBuilder membaca ukuran layar untuk menentukan tata letak responsif
         body: LayoutBuilder(
           builder: (context, constraints) {
-            // Tablet / Desktop
+            // Breakpoint 600dp: Tablet / Landscape menggunakan 2 kolom
             if (constraints.maxWidth >= 600) {
               return Padding(
                 padding: const EdgeInsets.all(20.0),
@@ -69,10 +67,8 @@ class _AcademicDashboardScreenState extends State<AcademicDashboardScreen> {
                       flex: 2,
                       child: SingleChildScrollView(child: HeaderBanner()),
                     ),
-
                     const SizedBox(width: 20),
-
-                    // Kolom kanan: daftar mata kuliah
+                    // Kolom kanan: grid 2 kolom daftar mata kuliah
                     Expanded(
                       flex: 3,
                       child: GridView.builder(
@@ -94,25 +90,20 @@ class _AcademicDashboardScreenState extends State<AcademicDashboardScreen> {
               );
             }
 
-            // Smartphone: 1 kolom
+            // Default (smartphone): tata letak 1 kolom vertikal
             return ListView(
               padding: const EdgeInsets.all(16),
               children: [
                 const HeaderBanner(),
-
                 const SizedBox(height: 16),
-
                 Text(
-                  'Mata Kuliah Semester 5 '
-                  '(${_courses.length} Terdaftar)',
+                  'Mata Kuliah Semester 5 (${_courses.length} Terdaftar)',
                   style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-
                 const SizedBox(height: 12),
-
                 ..._courses.map((course) => CourseCard(course: course)),
               ],
             );

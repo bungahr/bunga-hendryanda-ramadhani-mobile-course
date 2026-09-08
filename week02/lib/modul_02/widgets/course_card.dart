@@ -15,6 +15,7 @@ class CourseCard extends StatelessWidget {
       elevation: 2,
       margin: const EdgeInsets.only(bottom: 12),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      // Pakai Stack agar badge SKS bisa menimpa pojok kanan atas kartu
       child: Stack(
         children: [
           // Konten utama kartu
@@ -31,10 +32,9 @@ class CourseCard extends StatelessWidget {
                     letterSpacing: 0.8,
                   ),
                 ),
-
                 const SizedBox(height: 6),
 
-                // Nama mata kuliah
+                // Batasi judul maksimal 2 baris agar tinggi kartu tetap konsisten
                 Text(
                   course.name,
                   maxLines: 2,
@@ -43,10 +43,9 @@ class CourseCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-
                 const SizedBox(height: 10),
 
-                // Dosen pengampu
+                // Info dosen pengampu
                 Row(
                   children: [
                     Icon(
@@ -67,10 +66,9 @@ class CourseCard extends StatelessWidget {
                     ),
                   ],
                 ),
-
                 const SizedBox(height: 4),
 
-                // Ruang kelas
+                // Ruang kelas/lab
                 Row(
                   children: [
                     Icon(
@@ -87,10 +85,9 @@ class CourseCard extends StatelessWidget {
                     ),
                   ],
                 ),
-
                 const Spacer(),
 
-                // Progress
+                // Progress bar silabus
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -106,9 +103,7 @@ class CourseCard extends StatelessWidget {
                         ),
                       ],
                     ),
-
                     const SizedBox(height: 4),
-
                     LinearProgressIndicator(
                       value: course.progress,
                       borderRadius: BorderRadius.circular(4),

@@ -4,7 +4,7 @@ class Course {
   final String name;
   final String lecturer;
   final int sks;
-  final double progress;
+  final double progress; // progres silabus (0.0 - 1.0)
   final String room;
 
   const Course({
