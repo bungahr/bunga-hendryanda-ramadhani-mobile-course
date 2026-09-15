@@ -1,24 +1,20 @@
 import 'package:flutter/material.dart';
-
-import 'modul_02/academic_dashboard_screen.dart';
+import 'modul_02/study_kasus/ruang_praktikum.dart';
 
 void main() {
-  runApp(const PoliwangiApp());
+  runApp(const Modul02DosenApp());
 }
 
-class PoliwangiApp extends StatelessWidget {
-  const PoliwangiApp({super.key});
+class Modul02DosenApp extends StatelessWidget {
+  const Modul02DosenApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Modul 02 - Dashboard Akademik TRPL',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF0284C7)),
-        useMaterial3: true,
-      ),
-      home: const AcademicDashboardScreen(),
+      title: 'Modul 02 Dashboard Akademik',
+      // home: AcademicDashboardScreen(),
+      home: RuangPraktikum(),
     );
   }
 }
